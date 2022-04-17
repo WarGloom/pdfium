@@ -8,7 +8,7 @@ if(USE_BINUTILS_WORKAROUND)
 endif(USE_BINUTILS_WORKAROUND)
 
 if(APPLE OR LINUX)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -fno-exceptions -Wc++0x-compat  -fvisibility=hidden")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -fno-exceptions -Wc++0x-compat  -fvisibility=hidden -fdata-sections -ffunction-sections -Wl,--gc-sections")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
 endif(APPLE OR LINUX)
 
@@ -30,8 +30,8 @@ elseif(APPLE)
   set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -pthread")
   set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_LINKER_FLAGS} -Wl,-z,defs")
 elseif(UNIX)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC -fdata-sections -ffunction-sections")
+  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -fdata-sections -ffunction-sections")
   file(GLOB PLATFORM_SOURCES
     "core/fxge/linux/*.cpp"
     "core/fxge/linix/*.h"
@@ -522,6 +522,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     USE_SYSTEM_ZLIB
     USE_SYSTEM_ICUUC
 	USE_SYSTEM_LIBOPENJPEG2
+	USE_SYSTEM_LCMS2
     )  
 
 target_include_directories(${PROJECT_NAME} PRIVATE  
@@ -530,8 +531,10 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CONAN_INCLUDE_DIRS_ICU}
     ${CONAN_INCLUDE_DIRS_LIBJPEG}
     ${CONAN_INCLUDE_DIRS_ZLIB}
+    ${CONAN_INCLUDE_DIRS_LCMS}
+    ${CMAKE_CURRENT_SOURCE_DIR}
     )
-
+#message(FATAL_ERROR "    ${CONAN_INCLUDE_DIRS_LCMS}")
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
         CONAN_PKG::openjpeg
