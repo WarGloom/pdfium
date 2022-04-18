@@ -77,27 +77,35 @@ void CPDF_FontGlobals::Clear(CPDF_Document* pDoc) {
 }
 
 void CPDF_FontGlobals::LoadEmbeddedGB1CMaps() {
+#ifdef USE_GB1_MAPS
   SetEmbeddedCharset(
       CIDSET_GB1, pdfium::make_span(kFXCMAP_GB1_cmaps, kFXCMAP_GB1_cmaps_size));
   SetEmbeddedToUnicode(CIDSET_GB1, kFXCMAP_GB1CID2Unicode_5);
+#endif
 }
 
 void CPDF_FontGlobals::LoadEmbeddedCNS1CMaps() {
+#ifdef USE_CNS1_MAPS
   SetEmbeddedCharset(CIDSET_CNS1, pdfium::make_span(kFXCMAP_CNS1_cmaps,
                                                     kFXCMAP_CNS1_cmaps_size));
   SetEmbeddedToUnicode(CIDSET_CNS1, kFXCMAP_CNS1CID2Unicode_5);
+#endif
 }
 
 void CPDF_FontGlobals::LoadEmbeddedJapan1CMaps() {
+#ifdef USE_JAPAN1_MAPS
   SetEmbeddedCharset(
       CIDSET_JAPAN1,
       pdfium::make_span(kFXCMAP_Japan1_cmaps, kFXCMAP_Japan1_cmaps_size));
   SetEmbeddedToUnicode(CIDSET_JAPAN1, kFXCMAP_Japan1CID2Unicode_4);
+#endif
 }
 
 void CPDF_FontGlobals::LoadEmbeddedKorea1CMaps() {
+#ifdef USE_KOREA_MAPS
   SetEmbeddedCharset(
       CIDSET_KOREA1,
       pdfium::make_span(kFXCMAP_Korea1_cmaps, kFXCMAP_Korea1_cmaps_size));
   SetEmbeddedToUnicode(CIDSET_KOREA1, kFXCMAP_Korea1CID2Unicode_2);
+#endif
 }

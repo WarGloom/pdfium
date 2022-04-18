@@ -300,7 +300,257 @@ core/fpdfdoc/ipvt_fontmap.h
 )
 
 ######################## FPDFAPI ###########################################
-file (GLOB_RECURSE FPDFAPI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/core/fpdfapi/*)
+#file (GLOB_RECURSE FPDFAPI_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/core/fpdfapi/*)
+set(FPDFAPI_SOURCES
+core/fpdfapi/cmaps/fpdf_cmaps.cpp
+#core/fpdfapi/cmaps/cmap_int.h
+#core/fpdfapi/cpdf_modulemgr.cpp
+#core/fpdfapi/cpdf_modulemgr.h
+#core/fpdfapi/cpdf_pagerendercontext.cpp
+#core/fpdfapi/cpdf_pagerendercontext
+core/fpdfapi/edit/cpdf_creator.h
+core/fpdfapi/edit/cpdf_pagecontentgenerator.cpp
+core/fpdfapi/edit/cpdf_pagecontentgenerator.h
+#core/fpdfapi/edit/editint.h
+#core/fpdfapi/edit/fpdf_edit_create.cpp
+core/fpdfapi/font/cpdf_cidfont.cpp
+core/fpdfapi/font/cpdf_cidfont.h
+core/fpdfapi/font/cpdf_font.cpp
+core/fpdfapi/font/cpdf_fontencoding.cpp
+core/fpdfapi/font/cpdf_fontencoding.h
+core/fpdfapi/font/cpdf_font.h
+core/fpdfapi/font/cpdf_simplefont.cpp
+core/fpdfapi/font/cpdf_simplefont.h
+core/fpdfapi/font/cpdf_truetypefont.cpp
+core/fpdfapi/font/cpdf_truetypefont.h
+core/fpdfapi/font/cpdf_type1font.cpp
+core/fpdfapi/font/cpdf_type1font.h
+core/fpdfapi/font/cpdf_type3char.cpp
+core/fpdfapi/font/cpdf_type3char.h
+core/fpdfapi/font/cpdf_type3font.cpp
+core/fpdfapi/font/cpdf_type3font.h
+core/fpdfapi/font/cfx_cttgsubtable.cpp
+core/fpdfapi/font/cpdf_cmap.cpp
+core/fpdfapi/font/cpdf_cmapparser.cpp
+core/fpdfapi/font/cpdf_fontglobals.cpp
+core/fpdfapi/font/cpdf_cmapmanager.cpp
+core/fpdfapi/font/cpdf_cid2unicodemap.cpp
+core/fpdfapi/font/cfx_stockfontarray.cpp
+core/fpdfapi/font/cpdf_tounicodemap.cpp
+core/fpdfapi/page/cpdf_annotcontext.cpp
+
+#core/fpdfapi/font/font_int.h
+#core/fpdfapi/font/fpdf_font_cid.cpp
+#core/fpdfapi/font/fpdf_font.cpp
+#core/fpdfapi/font/ttgsubtable.cpp
+#core/fpdfapi/font/ttgsubtable.h
+core/fpdfapi/page/cpdf_allstates.cpp
+core/fpdfapi/page/cpdf_allstates.h
+core/fpdfapi/page/cpdf_clippath.cpp
+core/fpdfapi/page/cpdf_clippath.h
+core/fpdfapi/page/cpdf_color.cpp
+core/fpdfapi/page/cpdf_color.h
+core/fpdfapi/page/cpdf_colorspace.cpp
+core/fpdfapi/page/cpdf_colorspace.h
+core/fpdfapi/page/cpdf_colorstate.cpp
+core/fpdfapi/page/cpdf_colorstate.h
+#core/fpdfapi/page/cpdf_contentmark.cpp
+#core/fpdfapi/page/cpdf_contentmark.h
+#core/fpdfapi/page/cpdf_contentmarkitem.cpp
+#core/fpdfapi/page/cpdf_contentmarkitem.h
+#core/fpdfapi/page/cpdf_contentparser.cpp
+#core/fpdfapi/page/cpdf_contentparser.h
+#core/fpdfapi/page/cpdf_countedobject.h
+core/fpdfapi/page/cpdf_docpagedata.cpp
+core/fpdfapi/page/cpdf_docpagedata.h
+core/fpdfapi/page/cpdf_form.cpp
+core/fpdfapi/page/cpdf_form.h
+core/fpdfapi/page/cpdf_formobject.cpp
+core/fpdfapi/page/cpdf_formobject.h
+core/fpdfapi/page/cpdf_generalstate.cpp
+core/fpdfapi/page/cpdf_generalstate.h
+core/fpdfapi/page/cpdf_graphicstates.cpp
+core/fpdfapi/page/cpdf_graphicstates.h
+core/fpdfapi/page/cpdf_image.cpp
+core/fpdfapi/page/cpdf_image.h
+core/fpdfapi/page/cpdf_imageobject.cpp
+core/fpdfapi/page/cpdf_imageobject.h
+core/fpdfapi/page/cpdf_meshstream.cpp
+core/fpdfapi/page/cpdf_meshstream.h
+core/fpdfapi/page/cpdf_page.cpp
+core/fpdfapi/page/cpdf_page.h
+core/fpdfapi/page/cpdf_pagemodule.cpp
+core/fpdfapi/page/cpdf_pagemodule.h
+core/fpdfapi/page/cpdf_pageobject.cpp
+core/fpdfapi/page/cpdf_pageobject.h
+core/fpdfapi/page/cpdf_pageobjectholder.cpp
+core/fpdfapi/page/cpdf_pageobjectholder.h
+#core/fpdfapi/page/cpdf_pageobjectlist.cpp
+#core/fpdfapi/page/cpdf_pageobjectlist.h
+core/fpdfapi/page/cpdf_path.cpp
+core/fpdfapi/page/cpdf_path.h
+core/fpdfapi/page/cpdf_pathobject.cpp
+core/fpdfapi/page/cpdf_pathobject.h
+core/fpdfapi/page/cpdf_pattern.cpp
+core/fpdfapi/page/cpdf_pattern.h
+core/fpdfapi/page/cpdf_psengine.h
+core/fpdfapi/page/cpdf_shadingobject.cpp
+core/fpdfapi/page/cpdf_shadingobject.h
+core/fpdfapi/page/cpdf_shadingpattern.cpp
+core/fpdfapi/page/cpdf_shadingpattern.h
+core/fpdfapi/page/cpdf_streamcontentparser.cpp
+core/fpdfapi/page/cpdf_streamcontentparser.h
+core/fpdfapi/page/cpdf_streamparser.cpp
+core/fpdfapi/page/cpdf_streamparser.h
+core/fpdfapi/page/cpdf_textobject.cpp
+core/fpdfapi/page/cpdf_textobject.h
+core/fpdfapi/page/cpdf_textstate.cpp
+core/fpdfapi/page/cpdf_textstate.h
+core/fpdfapi/page/cpdf_tilingpattern.cpp
+core/fpdfapi/page/cpdf_tilingpattern.h
+core/fpdfapi/page/cpdf_transferfunc.cpp
+core/fpdfapi/page/cpdf_transferfunc.h
+core/fpdfapi/page/cpdf_transparency.cpp
+core/fpdfapi/page/cpdf_transparency.h
+core/fpdfapi/page/cpdf_occontext.cpp
+core/fpdfapi/page/cpdf_occontext.h
+core/fpdfapi/page/cpdf_function.cpp
+core/fpdfapi/page/cpdf_function.h
+core/fpdfapi/page/cpdf_contentmarks.cpp
+core/fpdfapi/page/cpdf_contentmarks.h
+core/fpdfapi/page/cpdf_dib.cpp
+core/fpdfapi/page/cpdf_dib.h
+core/fpdfapi/page/cpdf_contentmarkitem.cpp
+core/fpdfapi/page/cpdf_contentmarkitem.h
+core/fpdfapi/page/cpdf_transferfuncdib.cpp
+core/fpdfapi/page/cpdf_transferfuncdib.h
+core/fpdfapi/page/cpdf_patterncs.cpp
+core/fpdfapi/page/cpdf_patterncs.h
+core/fpdfapi/page/cpdf_basedcs.cpp
+core/fpdfapi/page/cpdf_indexedcs.cpp
+core/fpdfapi/page/cpdf_psfunc.cpp
+core/fpdfapi/page/cpdf_psengine.cpp
+core/fpdfapi/page/cpdf_stitchfunc.cpp
+core/fpdfapi/page/cpdf_expintfunc.cpp
+core/fpdfapi/page/cpdf_sampledfunc.cpp
+core/fpdfapi/page/cpdf_contentparser.cpp
+core/fpdfapi/page/cpdf_devicecs.cpp
+core/fpdfapi/page/cpdf_iccprofile.cpp
+
+core/fpdfapi/parser/cpdf_object_walker.cpp
+core/fpdfapi/parser/cpdf_object_walker.h
+#core/fpdfapi/page/pageint.h
+core/fpdfapi/parser/cfdf_document.cpp
+core/fpdfapi/parser/cfdf_document.h
+core/fpdfapi/parser/cpdf_array.cpp
+core/fpdfapi/parser/cpdf_array.h
+core/fpdfapi/parser/cpdf_boolean.cpp
+core/fpdfapi/parser/cpdf_boolean.h
+core/fpdfapi/parser/cpdf_crypto_handler.cpp
+core/fpdfapi/parser/cpdf_crypto_handler.h
+core/fpdfapi/parser/cpdf_data_avail.cpp
+core/fpdfapi/parser/cpdf_data_avail.h
+core/fpdfapi/parser/cpdf_dictionary.cpp
+core/fpdfapi/parser/cpdf_dictionary.h
+core/fpdfapi/parser/cpdf_document.cpp
+core/fpdfapi/parser/cpdf_document.h
+#core/fpdfapi/parser/cpdf_document_unittest.cpp
+core/fpdfapi/parser/cpdf_hint_tables.cpp
+core/fpdfapi/parser/cpdf_hint_tables.h
+core/fpdfapi/parser/cpdf_indirect_object_holder.cpp
+core/fpdfapi/parser/cpdf_indirect_object_holder.h
+core/fpdfapi/parser/cpdf_linearized_header.cpp
+core/fpdfapi/parser/cpdf_linearized_header.h
+core/fpdfapi/parser/cpdf_name.cpp
+core/fpdfapi/parser/cpdf_name.h
+core/fpdfapi/parser/cpdf_null.cpp
+core/fpdfapi/parser/cpdf_null.h
+core/fpdfapi/parser/cpdf_number.cpp
+core/fpdfapi/parser/cpdf_number.h
+core/fpdfapi/parser/cpdf_object.cpp
+core/fpdfapi/parser/cpdf_object.h
+#core/fpdfapi/parser/cpdf_object_unittest.cpp
+core/fpdfapi/parser/cpdf_parser.cpp
+#core/fpdfapi/parser/cpdf_parser_embeddertest.cpp
+core/fpdfapi/parser/cpdf_parser.h
+#core/fpdfapi/parser/cpdf_parser_unittest.cpp
+core/fpdfapi/parser/cpdf_reference.cpp
+core/fpdfapi/parser/cpdf_reference.h
+core/fpdfapi/parser/cpdf_security_handler.cpp
+#core/fpdfapi/parser/cpdf_security_handler_embeddertest.cpp
+core/fpdfapi/parser/cpdf_security_handler.h
+core/fpdfapi/parser/cpdf_simple_parser.cpp
+core/fpdfapi/parser/cpdf_simple_parser.h
+#core/fpdfapi/parser/cpdf_simple_parser_unittest.cpp
+core/fpdfapi/parser/cpdf_stream_acc.cpp
+core/fpdfapi/parser/cpdf_stream_acc.h
+core/fpdfapi/parser/cpdf_stream.cpp
+core/fpdfapi/parser/cpdf_stream.h
+core/fpdfapi/parser/cpdf_string.cpp
+core/fpdfapi/parser/cpdf_string.h
+core/fpdfapi/parser/cpdf_syntax_parser.cpp
+core/fpdfapi/parser/cpdf_syntax_parser.h
+#core/fpdfapi/parser/cpdf_syntax_parser_unittest.cpp
+core/fpdfapi/parser/fpdf_parser_decode.cpp
+#core/fpdfapi/parser/fpdf_parser_decode_embeddertest.cpp
+core/fpdfapi/parser/fpdf_parser_decode.h
+#core/fpdfapi/parser/fpdf_parser_decode_unittest.cpp
+core/fpdfapi/parser/fpdf_parser_utility.cpp
+core/fpdfapi/parser/fpdf_parser_utility.h
+core/fpdfapi/parser/cpdf_read_validator.cpp
+core/fpdfapi/parser/cpdf_encryptor.cpp
+core/fpdfapi/parser/cpdf_flateencoder.cpp
+core/fpdfapi/parser/cpdf_object_stream.cpp
+core/fpdfapi/parser/cpdf_cross_ref_table.cpp
+
+#core/fpdfapi/render/cpdf_charposlist.cpp
+#core/fpdfapi/render/cpdf_charposlist.h
+core/fpdfapi/render/cpdf_devicebuffer.cpp
+core/fpdfapi/render/cpdf_devicebuffer.h
+#core/fpdfapi/render/cpdf_dibsource.cpp
+#core/fpdfapi/render/cpdf_dibsource.h
+#core/fpdfapi/render/cpdf_dibtransferfunc.cpp
+#core/fpdfapi/render/cpdf_dibtransferfunc.h
+core/fpdfapi/render/cpdf_docrenderdata.cpp
+core/fpdfapi/render/cpdf_docrenderdata.h
+core/fpdfapi/render/cpdf_imagecacheentry.cpp
+core/fpdfapi/render/cpdf_imagecacheentry.h
+core/fpdfapi/render/cpdf_imageloader.cpp
+core/fpdfapi/render/cpdf_imageloader.h
+core/fpdfapi/render/cpdf_imagerenderer.cpp
+core/fpdfapi/render/cpdf_imagerenderer.h
+core/fpdfapi/render/cpdf_pagerendercache.cpp
+core/fpdfapi/render/cpdf_pagerendercache.h
+core/fpdfapi/render/cpdf_progressiverenderer.cpp
+core/fpdfapi/render/cpdf_progressiverenderer.h
+core/fpdfapi/render/cpdf_rendercontext.cpp
+core/fpdfapi/render/cpdf_rendercontext.h
+core/fpdfapi/render/cpdf_renderoptions.cpp
+core/fpdfapi/render/cpdf_renderoptions.h
+core/fpdfapi/render/cpdf_renderstatus.cpp
+core/fpdfapi/render/cpdf_renderstatus.h
+core/fpdfapi/render/cpdf_scaledrenderbuffer.cpp
+core/fpdfapi/render/cpdf_scaledrenderbuffer.h
+core/fpdfapi/render/cpdf_textrenderer.cpp
+core/fpdfapi/render/cpdf_textrenderer.h
+core/fpdfapi/render/cpdf_type3cache.cpp
+core/fpdfapi/render/cpdf_type3cache.h
+core/fpdfapi/render/charposlist.cpp
+core/fpdfapi/render/charposlist.h
+core/fpdfapi/render/cpdf_renderstatus.cpp
+core/fpdfapi/render/cpdf_renderstatus.h
+core/fpdfapi/render/cpdf_rendertiling.cpp
+core/fpdfapi/render/cpdf_rendertiling.h
+core/fpdfapi/render/cpdf_rendershading.cpp
+core/fpdfapi/render/cpdf_rendershading.h
+core/fpdfapi/render/cpdf_type3glyphmap.cpp
+core/fpdfapi/render/cpdf_pagerendercontext.cpp
+
+#core/fpdfapi/render/cpdf_type3glyphs.cpp
+#core/fpdfapi/render/cpdf_type3glyphs.h
+#core/fpdfapi/render/fpdf_render_loadimage_embeddertest.cpp
+#core/fpdfapi/render/fpdf_render_pattern_embeddertest.cpp
+)
 
 ######################## FPDFTEXT #############################################
 set(FPDFTEXT_SOURCES
@@ -317,7 +567,115 @@ core/fpdftext/unicodenormalizationdata.h
 
 ######################## FXCODEC #############################################
 # TODO rewrite 
-file (GLOB_RECURSE FXCODEC_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/core/fxcodec/*)
+#file (GLOB_RECURSE FXCODEC_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/core/fxcodec/*)
+####################### FXCODEC #############################################
+set(FXCODEC_SOURCES
+core/fxcodec/fx_codec_def.h
+core/fxcodec/fx_codec.h
+core/fxcodec/basic/basicmodule.cpp
+    core/fxcodec/basic/basicmodule.h
+    core/fxcodec/cfx_codec_memory.cpp
+    core/fxcodec/cfx_codec_memory.h
+    core/fxcodec/fax/faxmodule.cpp
+    core/fxcodec/fax/faxmodule.h
+    core/fxcodec/flate/flatemodule.cpp
+    core/fxcodec/flate/flatemodule.h
+    core/fxcodec/fx_codec.cpp
+    core/fxcodec/fx_codec.h
+    core/fxcodec/fx_codec_def.h
+    core/fxcodec/icc/icc_transform.cpp
+    core/fxcodec/icc/icc_transform.h
+    core/fxcodec/jbig2/JBig2_ArithDecoder.cpp
+    core/fxcodec/jbig2/JBig2_ArithDecoder.h
+    core/fxcodec/jbig2/JBig2_ArithIntDecoder.cpp
+    core/fxcodec/jbig2/JBig2_ArithIntDecoder.h
+    core/fxcodec/jbig2/JBig2_BitStream.cpp
+    core/fxcodec/jbig2/JBig2_BitStream.h
+    core/fxcodec/jbig2/JBig2_Context.cpp
+    core/fxcodec/jbig2/JBig2_Context.h
+    core/fxcodec/jbig2/JBig2_Define.h
+    core/fxcodec/jbig2/JBig2_DocumentContext.cpp
+    core/fxcodec/jbig2/JBig2_DocumentContext.h
+    core/fxcodec/jbig2/JBig2_GrdProc.cpp
+    core/fxcodec/jbig2/JBig2_GrdProc.h
+    core/fxcodec/jbig2/JBig2_GrrdProc.cpp
+    core/fxcodec/jbig2/JBig2_GrrdProc.h
+    core/fxcodec/jbig2/JBig2_HtrdProc.cpp
+    core/fxcodec/jbig2/JBig2_HtrdProc.h
+    core/fxcodec/jbig2/JBig2_HuffmanDecoder.cpp
+    core/fxcodec/jbig2/JBig2_HuffmanDecoder.h
+    core/fxcodec/jbig2/JBig2_HuffmanTable.cpp
+    core/fxcodec/jbig2/JBig2_HuffmanTable.h
+    core/fxcodec/jbig2/JBig2_Image.cpp
+    core/fxcodec/jbig2/JBig2_Image.h
+    core/fxcodec/jbig2/JBig2_Page.h
+    core/fxcodec/jbig2/JBig2_PatternDict.cpp
+    core/fxcodec/jbig2/JBig2_PatternDict.h
+    core/fxcodec/jbig2/JBig2_PddProc.cpp
+    core/fxcodec/jbig2/JBig2_PddProc.h
+    core/fxcodec/jbig2/JBig2_SddProc.cpp
+    core/fxcodec/jbig2/JBig2_SddProc.h
+    core/fxcodec/jbig2/JBig2_Segment.cpp
+    core/fxcodec/jbig2/JBig2_Segment.h
+    core/fxcodec/jbig2/JBig2_SymbolDict.cpp
+    core/fxcodec/jbig2/JBig2_SymbolDict.h
+    core/fxcodec/jbig2/JBig2_TrdProc.cpp
+    core/fxcodec/jbig2/JBig2_TrdProc.h
+    core/fxcodec/jbig2/jbig2_decoder.cpp
+    core/fxcodec/jbig2/jbig2_decoder.h
+    core/fxcodec/jpeg/jpeg_common.cpp
+    core/fxcodec/jpeg/jpeg_common.h
+    core/fxcodec/jpeg/jpegmodule.cpp
+    core/fxcodec/jpeg/jpegmodule.h
+    core/fxcodec/jpx/cjpx_decoder.cpp
+    core/fxcodec/jpx/cjpx_decoder.h
+    core/fxcodec/jpx/jpx_decode_utils.cpp
+    core/fxcodec/jpx/jpx_decode_utils.h
+    core/fxcodec/scanlinedecoder.cpp
+    core/fxcodec/scanlinedecoder.h
+    )
+
+#core/fxcodec/codec/ccodec_basicmodule.h
+# core/fxcodec/codec/ccodec_bmpmodule.cpp
+# core/fxcodec/codec/ccodec_bmpmodule.h
+#core/fxcodec/codec/ccodec_faxmodule.h
+#core/fxcodec/codec/ccodec_flatemodule.h
+#core/fxcodec/codec/ccodec_gifmodule.cpp
+#core/fxcodec/codec/ccodec_gifmodule.h
+#core/fxcodec/codec/ccodec_iccmodule.h
+#core/fxcodec/codec/ccodec_jbig2module.h
+#core/fxcodec/codec/ccodec_jpegmodule.h
+#core/fxcodec/codec/ccodec_jpxmodule.h
+#core/fxcodec/codec/ccodec_pngmodule.cpp
+#core/fxcodec/codec/ccodec_pngmodule.h
+#core/fxcodec/codec/ccodec_progressivedecoder.h
+#core/fxcodec/codec/ccodec_scanlinedecoder.h
+#core/fxcodec/codec/ccodec_tiffmodule.cpp
+#core/fxcodec/codec/ccodec_tiffmodule.h
+#core/fxcodec/codec/codec_int.h
+#core/fxcodec/codec/fx_codec_a85_unittest.cpp
+#core/fxcodec/codec/fx_codec.cpp
+#core/fxcodec/codec/fx_codec_embeddertest.cpp
+#core/fxcodec/codec/fx_codec_fax.cpp
+#core/fxcodec/codec/fx_codec_flate.cpp
+#core/fxcodec/codec/fx_codec_icc.cpp
+#core/fxcodec/codec/fx_codec_jbig.cpp
+#core/fxcodec/codec/fx_codec_jpeg.cpp
+#core/fxcodec/codec/fx_codec_jpx_opj.cpp
+##core/fxcodec/codec/fx_codec_jpx_unittest.cpp
+##core/fxcodec/codec/fx_codec_progress.cpp
+#core/fxcodec/codec/fx_codec_rle_unittest.cpp
+#core/fxcodec/codec/icodec_bmpmodule.h
+#core/fxcodec/codec/icodec_gifmodule.h
+#core/fxcodec/codec/icodec_pngmodule.h
+#core/fxcodec/codec/icodec_tiffmodule.h
+#core/fxcodec/lbmp/fx_bmp.cpp
+#core/fxcodec/lbmp/fx_bmp.h
+#core/fxcodec/lbmp/fx_bmp.cpp
+#core/fxcodec/lbmp/fx_bmp.h
+#core/fxcodec/lgif/fx_gif.cpp
+#core/fxcodec/lgif/fx_gif.h
+
 ######################## FXCRT #############################################
 file (GLOB_RECURSE FXCRT_SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/core/fxcrt/*)
 file(GLOB_RECURSE platform_sources
@@ -476,8 +834,8 @@ file( GLOB WINDOWS_SOURCES
     "${CMAKE_CURRENT_SOURCE_DIR}/core/fxge/cfx_windows*"
     "${CMAKE_CURRENT_SOURCE_DIR}/core/fxcrt/*windows.cpp"
     )
-if(NOT WIN32)
-    list (REMOVE_ITEM ALL_SOURCES ${WINDOWS_SOURCES})
+if(WIN32)
+    list (APPEND ALL_SOURCES ${WINDOWS_SOURCES})
 endif()
 file( GLOB APPLE_SOURCES 
     "${CMAKE_CURRENT_SOURCE_DIR}/core/fxge/apple/*"
