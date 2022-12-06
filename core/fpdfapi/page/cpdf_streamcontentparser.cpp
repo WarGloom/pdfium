@@ -686,7 +686,8 @@ void CPDF_StreamContentParser::Handle_ConcatMatrix() {
 }
 
 void CPDF_StreamContentParser::Handle_SetColorSpace_Fill() {
-  RetainPtr<CPDF_ColorSpace> pCS = FindColorSpace(GetString(0));
+  RetainPtr<CPDF_ColorSpace> pCS = nullptr;
+ // FindColorSpace(GetString(0));
   if (!pCS)
     return;
 
@@ -1177,10 +1178,10 @@ RetainPtr<CPDF_ColorSpace> CPDF_StreamContentParser::FindColorSpace(
         ->GetColorSpace(pDefObj, nullptr);
   }
   const CPDF_Object* pCSObj = FindResourceObj("ColorSpace", name);
-  if (!pCSObj)
+  // if (!pCSObj)
     return nullptr;
-  return CPDF_DocPageData::FromDocument(m_pDocument.Get())
-      ->GetColorSpace(pCSObj, nullptr);
+  // return CPDF_DocPageData::FromDocument(m_pDocument.Get())
+      // ->GetColorSpace(pCSObj, nullptr);
 }
 
 RetainPtr<CPDF_Pattern> CPDF_StreamContentParser::FindPattern(
