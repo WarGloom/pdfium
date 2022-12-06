@@ -506,7 +506,7 @@ RetainPtr<CPDF_ColorSpace> CPDF_ColorSpace::Load(
     return nullptr;
 
   pCS->m_pArray.Reset(pArray);
-  pCS->m_nComponents = pCS->v_Load(pDoc, pArray, pVisited);
+//  pCS->m_nComponents = pCS->v_Load(pDoc, pArray, pVisited);
   if (pCS->m_nComponents == 0)
     return nullptr;
 
