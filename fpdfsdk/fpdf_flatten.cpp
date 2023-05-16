@@ -9,6 +9,7 @@
 #include <limits.h>
 
 #include <algorithm>
+#include <cstdint>
 #include <sstream>
 #include <utility>
 #include <vector>
