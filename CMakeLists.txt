@@ -1,6 +1,4 @@
 PROJECT (pdfium)
-CMAKE_MINIMUM_REQUIRED (VERSION 2.8.12)
-
 set(USE_BINUTILS_WORKAROUND ON CACHE BOOL "use gcc-ar and gcc-ranlib instead ar and ranlib (is needed for LTO)")
 if(USE_BINUTILS_WORKAROUND)
     set(CMAKE_AR gcc-ar)
@@ -11,7 +9,13 @@ if(APPLE)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-exceptions -fvisibility=hidden")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
 elseif(LINUX)
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x -fno-exceptions -Wc++0x-compat -fvisibility=hidden -Wno-deprecated-enum-enum-conversion -Wno-deprecated-enum-float-conversion")
+    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY COMPILE_OPTIONS
+        -fno-exceptions
+        -Wc++0x-compat 
+        -fvisibility=hidden 
+        -Wno-deprecated-enum-enum-conversion
+        -Wno-deprecated-enum-float-conversion
+    )
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
 endif()
 
