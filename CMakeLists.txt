@@ -15,6 +15,8 @@ elseif(LINUX)
         -fvisibility=hidden 
         -Wno-deprecated-enum-enum-conversion
         -Wno-deprecated-enum-float-conversion
+        -Wno-pre-c++14-compat
+        -Wno-deprecated-builtins
     )
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden")
 endif()
