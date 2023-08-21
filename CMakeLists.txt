@@ -562,19 +562,22 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
     )  
 
 target_include_directories(${PROJECT_NAME} PRIVATE  
-    ${CONAN_INCLUDE_DIRS_ABSEIL}
+    # ${CONAN_INCLUDE_DIRS_ABSEIL}
+    $<TARGET_PROPERTY:icu::icu,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:abseil::abseil,INTERFACE_INCLUDE_DIRECTORIES>
+    $<TARGET_PROPERTY:abseil::abseil,INTERFACE_INCLUDE_DIRECTORIES>
     #${CONAN_INCLUDE_DIRS_FREETYPE}
-    ${CONAN_INCLUDE_DIRS_ICU}
+    # ${CONAN_INCLUDE_DIRS_ICU}
     #${CONAN_INCLUDE_DIRS_LIBJPEG}
-    ${CONAN_INCLUDE_DIRS_ZLIB}
+    # ${CONAN_INCLUDE_DIRS_ZLIB}
     )
 
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
-        #CONAN_PKG::openjpeg
-        #CONAN_PKG::libjpeg
-        CONAN_PKG::abseil
-        CONAN_PKG::freetype
+        # openjpeg
+        # libjpeg
+         abseil::abseil
+         Freetype::Freetype
 )
 
 #Install
