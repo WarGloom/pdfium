@@ -140,7 +140,6 @@ core/ffpdfapi/cmaps/Korea1/UniKS-UCS2-V_1.cpp
 core/ffpdfapi/cmaps/Korea1/UniKS-UTF16-H_0.cpp
   )
 endif(USE_KOREA_MAPS)
-#find_package(Freetype REQUIRED)
 
 #Use own jbig2 in anytime
 #add_subdirectory(core/fxcodec/jbig2)
@@ -563,21 +562,21 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE
 
 target_include_directories(${PROJECT_NAME} PRIVATE  
     # ${CONAN_INCLUDE_DIRS_ABSEIL}
+    $<TARGET_PROPERTY:JPEG::JPEG,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:icu::icu,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:abseil::abseil,INTERFACE_INCLUDE_DIRECTORIES>
     $<TARGET_PROPERTY:abseil::abseil,INTERFACE_INCLUDE_DIRECTORIES>
-    #${CONAN_INCLUDE_DIRS_FREETYPE}
-    # ${CONAN_INCLUDE_DIRS_ICU}
-    #${CONAN_INCLUDE_DIRS_LIBJPEG}
-    # ${CONAN_INCLUDE_DIRS_ZLIB}
+    $<TARGET_PROPERTY:Freetype::Freetype,INTERFACE_INCLUDE_DIRECTORIES>
     )
 
 target_link_libraries(${PROJECT_NAME}
     PUBLIC
-        # openjpeg
-        # libjpeg
-         abseil::abseil
-         Freetype::Freetype
+        # PNG::PNG
+        lcms::lcms
+        icu::icu
+        JPEG::JPEG
+        abseil::abseil
+        Freetype::Freetype
 )
 
 #Install
